@@ -1,0 +1,22 @@
+name: "Build and publish j2g to npm"
+
+on: 
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: 'https://registry.npmjs.org'
+      - run: yarn
+      - run: yarn build
+      - run: cp README.md ./dist/README.md
+      - run: npm publish ./dist
+        env:
+          NODE_AUTH_TOKEN:  ${{ secrets.J2G_NPM_AUTH_TOKEN }}
