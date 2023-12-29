@@ -1,6 +1,6 @@
 {
   "name": "j2g",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create new git branch from Jira ticket code",
   "author": "Venelin Manchev <venelinphp@gmail.com>",
   "license": "ISC",

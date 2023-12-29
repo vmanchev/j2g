@@ -23,7 +23,7 @@ export class GitService {
         });
     }
 
-    isRemote(branch: string): boolean {
+    isRemoteBranch(branch: string): boolean {
         let isRemoteSource = true;
         try {
             execSync(`git ls-remote --exit-code --heads origin ${branch}`, {
@@ -34,6 +34,11 @@ export class GitService {
         }
 
         return isRemoteSource;
+    }
+
+    isLocalBranch(branchName: string): boolean {
+        const result = execSync(`git branch --list ${branchName}`).toString();
+        return result.includes(branchName);
     }
 
     pull(branch: string) {
@@ -48,15 +53,5 @@ export class GitService {
         execSync(`git checkout -b ${branch}`, {
             stdio: 'ignore'
         });
-    }
-
-    isLocalBranch(branchName: string): boolean {
-        const result = execSync(`git branch --list ${branchName}`).toString();
-        return result.includes(branchName);
-    }
-
-    resetConfig(location: 'local', section: string) {
-        this.loggerService.info('Resetting  configuration');
-        execSync(`git config --${location} --remove-section ${section}`)
     }
 }

@@ -51,7 +51,7 @@ export async function branchCommand(code: string, options: J2GCreateOptions) {
         return;
     }
 
-    if (gitService.isRemote(options.source)) {
+    if (gitService.isRemoteBranch(options.source)) {
         gitService.pull(options.source)
     }
 
