@@ -41,9 +41,9 @@ export class GitService {
         return result.includes(branchName);
     }
 
-    pull(branch: string) {
-        this.loggerService.info(`git pull ${branch}`)
-        execSync(`git pull ${branch}`, {
+    pull() {
+        this.loggerService.info(`git pull`)
+        execSync(`git pull`, {
             stdio: 'ignore'
         });
     }

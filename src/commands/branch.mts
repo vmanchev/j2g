@@ -52,7 +52,7 @@ export async function branchCommand(code: string, options: J2GCreateOptions) {
     }
 
     if (gitService.isRemoteBranch(options.source)) {
-        gitService.pull(options.source)
+        gitService.pull()
     }
 
     // create a new branch with name branchName from options.source branch
