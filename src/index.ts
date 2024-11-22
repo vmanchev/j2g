@@ -10,7 +10,7 @@ import {
 } from './types/j2g-config-options.type';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
-const packageJson = require('../package.json');
+const packageJson = require('./package.json');
 
 const program = new Command();
 program.name('j2g').usage('[command] [options]');
