@@ -94,7 +94,7 @@ export class ConfigService {
         return this.getConfig()?.map(config => config.url);
     }
 
-    public updateTokenForBoard(jiraBoard: string, token: string): void {
+    public updateTokenForBoard(jiraBoard: string, email: string, token: string): void {
         const existingConfig = this.getConfig();
 
         this.store.set({
@@ -103,6 +103,7 @@ export class ConfigService {
                     return {
                         ...ec,
                         token,
+                        email,
                     }
                 }
 
