@@ -22,7 +22,7 @@
   },
   "main": "./dist/index.js",
   "bin": {
-    "j2g": "./dist/index.js"
+    "j2g": "./index.js"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
