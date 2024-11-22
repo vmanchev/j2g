@@ -17,6 +17,7 @@ jobs:
       - run: yarn
       - run: yarn build
       - run: cp README.md ./dist/README.md
+      - run: cp package.json ./dist/package.json
       - run: npm publish ./dist
         env:
           NODE_AUTH_TOKEN:  ${{ secrets.J2G_NPM_AUTH_TOKEN }}
