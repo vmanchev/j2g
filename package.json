@@ -20,7 +20,7 @@
   "scripts": {
     "build": "tsc"
   },
-  "main": "./dist/index.js",
+  "main": "./index.js",
   "bin": {
     "j2g": "./index.js"
   },
